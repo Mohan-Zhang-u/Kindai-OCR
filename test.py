@@ -92,7 +92,7 @@ parser.add_argument('--trained_model', default='./pretrain/synweights_4600.pth',
 parser.add_argument('--text_threshold', default=0.7, type=float, help='text confidence threshold')
 parser.add_argument('--low_text', default=0.4, type=float, help='text low-bound score')
 parser.add_argument('--link_threshold', default=0.4, type=float, help='link confidence threshold')
-parser.add_argument('--cuda', default=True, type=str2bool, help='Use cuda to train model')
+parser.add_argument('--cuda', default=False, type=str2bool, help='Use cuda to train model')
 parser.add_argument('--canvas_size', default=1000, type=int, help='image size for inference')
 parser.add_argument('--mag_ratio', default=2, type=float, help='image magnification ratio')
 parser.add_argument('--poly', default=False, action='store_true', help='enable polygon type')
@@ -211,7 +211,7 @@ def test(text_detection_modelpara, ocr_modelpara, dictionary_target):
         worddicts_r[vv] = kk
     t = time.time()
 
-    fontPIL = '/usr/share/fonts/truetype/fonts-japanese-gothic.ttf' # japanese font
+    fontPIL = './fonts-japanese-gothic.ttf' # japanese font
     size = 40
     colorBGR = (0,0,255) 
 
